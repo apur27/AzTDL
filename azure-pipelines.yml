@@ -6,7 +6,6 @@
 trigger:
 - master
 
-pool:
 steps:
 - script: echo Hello, world!
 - script: echo $(build.artifactstagingdirectory)
