@@ -10,10 +10,16 @@ steps:
 - script: echo Hello, world!
 - script: echo $(build.artifactstagingdirectory)
   displayName: 'Run a one-line script'
-
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'ARM'
     Contents: '**'
     TargetFolder: '$(build.artifactstagingdirectory)'
+    CleanTargetFolder: true
+    OverWrite: true
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
