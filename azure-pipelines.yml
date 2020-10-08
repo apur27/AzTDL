@@ -11,10 +11,5 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- task: CopyFiles@2
-  inputs:
-    Contents: '**'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-  vmImage: 'ubuntu-latest'
 
 
